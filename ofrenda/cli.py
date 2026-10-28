@@ -3,6 +3,17 @@ ofrenda CLI — three commands: new, list, show.
 """
 from __future__ import annotations
 
+import sys
+
+# On Windows the console codepage is often cp1252, which can't encode characters
+# that language models frequently produce (curly quotes, em-dashes, accented letters).
+# reconfigure() switches the encoding in-place; Rich's internal references stay valid.
+if sys.platform == "win32":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 from pathlib import Path
 from typing import Optional
 

@@ -13,7 +13,7 @@ from ofrenda.config import Config
 # How long to wait for the model to start producing tokens.
 # Generous because small models on CPU can be slow to warm up.
 _CONNECT_TIMEOUT = 10.0
-_READ_TIMEOUT = 120.0
+_READ_TIMEOUT = 300.0
 
 
 class OllamaError(RuntimeError):
