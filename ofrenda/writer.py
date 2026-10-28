@@ -35,12 +35,10 @@ def _build_transcript(
     name: str, relationship: str, pairs: list[tuple[str, str]]
 ) -> str:
     lines = [f"Name: {name}", f"Relationship: {relationship}", "---"]
-    for question, answer in pairs:
-        if answer in ("[skipped]", "[done]"):
+    for _question, answer in pairs:
+        if answer in ("[skipped]", "[done]") or not answer.strip():
             continue
-        lines.append(f"Q: {question}")
-        lines.append(f"A: {answer}")
-        lines.append("")
+        lines.append(f"- {answer}")
     return "\n".join(lines)
 
 
