@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ofrenda"
+version = "0.1.0"
+description = "A quiet CLI tool that helps you remember someone, privately."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27",
+    "typer>=0.12",
+    "rich>=13",
+]
+
+[project.scripts]
+ofrenda = "ofrenda.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ofrenda*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
