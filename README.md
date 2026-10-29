@@ -25,7 +25,7 @@ Any other small model works too. You can change it in the config (see below).
 **3. Install ofrenda**
 
 ```bash
-git clone https://github.com/yourname/ofrenda-cli.git
+git clone https://github.com/madhav-1204/Ofrenda-CLI.git
 cd ofrenda-cli
 pip install -e .
 ```
